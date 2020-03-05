@@ -1,0 +1,42 @@
+<div class="jumbotron">
+			<h1>Open Library</h1>
+			<p>Please enter the ISBN of the book you'd like to retrive</p>
+			<form action="/" method="post" onsubmit="buildGallery(); return false;">
+				<div class="form-group row">
+					<label for="number-images" class="col-sm-2 col-form-label">Number of Images</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="number-images" placeholder="0" required>
+					</div>
+					<div class="col-sm-6">
+						<button type="submit" class="btn btn-primary">Generate</button>
+					</div>
+				</div>
+			</form>
+		</div>	
+		<div class="flex-container" id="images"></div>
+		
+		
+		
+		
+		
+
+
+
+
+let buildGallery = function(){
+	$("#images").empty();
+	var url = "https://dog.ceo/api/breeds/image/random/" + $("#number-images").val();
+	$.ajax({
+		url: url,
+		type: "GET",
+		dataType: "json",
+		success: function(data){
+			data.message.forEach(function(src){
+				$("#images").append("<div class=\"img-thumbnail flex-item\"><img src=\""+src+"\"></div>");
+			});
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+}
