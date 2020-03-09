@@ -6,9 +6,10 @@ let buildGallery = function(){
 		type: "GET",
 		dataType: "json",
 		success: function(data){
-			data.message.forEach(function(src){
-				$("#images").append("<div class=\"img-thumbnail flex-item\"><img src=\""+src+"\"></div>");
-			});
+			console.log(data);
+			// data.message.forEach(function(src){
+			// 	$("#images").append("<div class=\"img-thumbnail flex-item\"><img src=\""+src+"\"></div>");
+			// });
 		},
 		error: function(err){
 			console.log(err);
