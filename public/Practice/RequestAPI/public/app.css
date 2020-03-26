@@ -13,26 +13,31 @@ hr{
 	margin: 0 auto;
 }
 
-#movies-list, #movies-list p, #movies-list h5{
+#book-list, #book-list p, #book-list h5{
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-#movies-list > li{
-  float: left;
+#book-list > li{
+  float: none;
   margin-right: 50px;
   width: 120px;
 }
 
-#movies-list > li > .poster{
+#book-list > li > .cover{
   display: block;
-  float: left;
+  float: inherit;
   margin-right: 0px;
 }
 
-#movies-list > li > .poster,
-#movies-list > li > .poster > img{
+#book-list > li > .cover,
+#book-list > li > .cover > img{
   width: 100%; 
   height: 100%;
+}
+
+.jumbotron {
+	color: #2c3e50;
+	background: #ecf0f1
 }
